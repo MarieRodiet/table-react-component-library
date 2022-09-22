@@ -1,18 +1,13 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-import Table from './Table'
+import DataTable from './DataTable'
+import { mockedList, columns } from './data/mockedEmployeeList.js'
 
-export default function HelloWorld(props) {
-  const { greetee = 'World' } = props
-
+export default function List() {
   return (
-    <div>
-      Hello, {greetee}!
-      <Table />
+    <div className="listContainer">
+      <div className="listContainer-content">
+        <DataTable data={mockedList} columns={columns} title="Employees" />
+      </div>
     </div>
   )
-}
-
-HelloWorld.propTypes = {
-  greetee: PropTypes.string,
 }
