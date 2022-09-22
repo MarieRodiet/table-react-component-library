@@ -1,19 +1,19 @@
 import * as React from 'react'
 import { render, screen, cleanup } from '@testing-library/react'
 import { describe, expect, test, afterEach } from 'vitest'
-import HelloWorld from './index'
+import Datatable from './index'
+import { mockedList, columns } from './data/mockedEmployeeList.js'
 
 describe('Integration test', () => {
   afterEach(cleanup)
 
   test('Minimal render display expected text', () => {
-    render(<HelloWorld />)
-    expect(screen.getByText('Hello, World!'))
+    render(<Datatable data={mockedList} columns={columns} title="Employees" />)
+    expect(screen.getByText('Rows per page :'))
   })
 
   test('Expected greetee is displayed', () => {
-    const greetee = 'Universe'
-    render(<HelloWorld greetee={greetee} />)
-    expect(screen.getByText(`Hello, ${greetee}!`))
+    render(<Datatable data={mockedList} columns={columns} title="Employees" />)
+    expect(screen.getByText("'Employees'"))
   })
 })

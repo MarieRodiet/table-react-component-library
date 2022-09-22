@@ -6,7 +6,13 @@ import Search from './Search'
 import Pagination from './Pagination'
 import { SortList, SearchList, ShowList } from './Sort'
 
-export default function DataTable({ data, columns, title, sortListFunc = SortList }) {
+export default function DataTable({
+  data,
+  columns,
+  title,
+  sortListFunc = SortList,
+  theme = 'light',
+}) {
   const [inputSearch, setInputSearch] = useState('')
   const [list, setList] = useState(data)
   const [isASC, setASC] = useState(true)
@@ -60,18 +66,21 @@ export default function DataTable({ data, columns, title, sortListFunc = SortLis
   }
 
   return (
-    <>
-      <h1>{title}</h1>
-      <Search handleSearch={handleSearch} />
-      <Pagination
-        handleNbOfRows={handleNbOfRows}
-        currentPage={currentPage}
-        handleCurrentPage={handleCurrentPage}
-        nbOfPages={nbOfPages}
-        rowsPerPage={rowsPerPage}
-      />
-      <Table data={list} columns={columns} handleSort={handleSort} />
-    </>
+    <div className={`listContainer ${theme}`}>
+      <div className="listContainer-content">
+        <h1>{title}</h1>
+        <Search handleSearch={handleSearch} theme={theme} />
+        <Pagination
+          handleNbOfRows={handleNbOfRows}
+          currentPage={currentPage}
+          handleCurrentPage={handleCurrentPage}
+          nbOfPages={nbOfPages}
+          rowsPerPage={rowsPerPage}
+          theme={theme}
+        />
+        <Table data={list} columns={columns} handleSort={handleSort} theme={theme} />
+      </div>
+    </div>
   )
 }
 
@@ -80,4 +89,5 @@ DataTable.propTypes = {
   columns: PropTypes.array,
   title: PropTypes.string,
   sortListFunc: PropTypes.func,
+  theme: PropTypes.string,
 }

@@ -8,11 +8,14 @@ export default function Pagination({
   handleNbOfRows,
   nbOfPages,
   rowsPerPage,
+  theme,
 }) {
   return (
     <div className="table-container-pagination">
       <form className="table-container-pagination-select">
-        <label htmlFor="nbOfRows">Rows per page : </label>
+        <label className={theme} htmlFor="nbOfRows">
+          Rows per page :
+        </label>
         <select
           defaultValue={rowsPerPage}
           id="nbOfRows-list"
@@ -25,7 +28,7 @@ export default function Pagination({
         </select>
       </form>
       {nbOfPages > 1 ? (
-        <div className="table-container-pagination-btnContainer">
+        <div className={`table-container-pagination-btnContainer ${theme}`}>
           <button
             className="table-container-pagination-btnContainer-btn"
             onClick={() => handleCurrentPage('previous')}
@@ -51,4 +54,5 @@ Pagination.propTypes = {
   handleNbOfRows: PropTypes.func,
   nbOfPages: PropTypes.number,
   rowsPerPage: PropTypes.number,
+  theme: PropTypes.string,
 }

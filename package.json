@@ -1,5 +1,5 @@
 {
-  "name": "table-react-component",
+  "name": "@mariemoore/table-react-component",
   "version": "1.0.0",
   "description": "A table that can sort, search and display data with pagination",
   "directories": {

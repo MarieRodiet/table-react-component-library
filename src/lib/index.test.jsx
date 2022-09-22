@@ -1,11 +1,12 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { describe, expect, test } from 'vitest'
-import HelloWorld from './index'
+import Datatable from './index'
+import { mockedList, columns } from './data/mockedEmployeeList.js'
 
-describe('HelloWorld', () => {
-  test('HelloWorld component renders correctly', () => {
-    const component = renderer.create(<HelloWorld />)
+describe('Datatable', () => {
+  test('Datatable component renders correctly', () => {
+    const component = renderer.create(<Datatable />)
 
     const tree = component.toJSON()
 
@@ -13,7 +14,9 @@ describe('HelloWorld', () => {
   })
 
   test('The greetee prop works', () => {
-    const component = renderer.create(<HelloWorld greetee={'Universe'} />)
+    const component = renderer.create(
+      <Datatable data={mockedList} columns={columns} title="Employees" />
+    )
 
     const tree = component.toJSON()
 
