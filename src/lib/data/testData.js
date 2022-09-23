@@ -1,0 +1,47 @@
+export const testList = [
+  {
+    FirstName: 'ATEST',
+    LastName: 'ZTEST',
+    BirthDate: '12/29/0022',
+    StartDate: '01/09/1992',
+    Street: 'AB',
+    City: 'IJ',
+    State: 'OP',
+    Zipcode: '0000',
+    Department: 'AAAA',
+  },
+  {
+    FirstName: 'BTEST',
+    LastName: 'YTEST',
+    BirthDate: '07/08/0032',
+    StartDate: '01/19/2020',
+    Street: 'CD',
+    City: 'KL',
+    State: 'QR',
+    Zipcode: '1111',
+    Department: 'BBBB',
+  },
+  {
+    FirstName: 'CTEST',
+    LastName: 'WTEST',
+    BirthDate: '07/18/0050',
+    StartDate: '02/09/2023',
+    Street: 'EF',
+    City: 'MN',
+    State: 'ST',
+    Zipcode: '2222',
+    Department: 'CCCC',
+  },
+]
+
+export const testColumns = [
+  'Prenom',
+  'Nom',
+  'DatedeNaissance',
+  'DatedeDebut',
+  'Rue',
+  'Ville',
+  'Etat',
+  'CodePostal',
+  'Departement',
+]

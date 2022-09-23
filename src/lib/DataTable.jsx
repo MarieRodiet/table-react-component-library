@@ -1,15 +1,16 @@
 import { PropTypes } from 'prop-types'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Table from './Table'
-import Search from './Search'
-import Pagination from './Pagination'
+import Table from './Table.jsx'
+import Search from './Search.jsx'
+import Pagination from './Pagination.jsx'
+import { mockedList, mockedColumns } from './data/mockedEmployeeList.js'
 import { SortList, SearchList, ShowList } from './Sort'
 
 export default function DataTable({
-  data,
-  columns,
-  title,
+  data = mockedList,
+  columns = mockedColumns,
+  title = 'TITLE',
   sortListFunc = SortList,
   theme = 'light',
 }) {
@@ -68,7 +69,7 @@ export default function DataTable({
   return (
     <div className={`listContainer ${theme}`}>
       <div className="listContainer-content">
-        <h1>{title}</h1>
+        <h1 data-testid="title">{title}</h1>
         <Search handleSearch={handleSearch} theme={theme} />
         <Pagination
           handleNbOfRows={handleNbOfRows}

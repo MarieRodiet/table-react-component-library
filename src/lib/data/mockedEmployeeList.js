@@ -1,10 +1,10 @@
 export const mockedList = [
   {
     FirstName: 'Julie',
-    LastName: 'Perarnau',
+    LastName: 'Champ',
     BirthDate: '12/29/1989',
     StartDate: '01/09/1992',
-    Street: '7 Route de Dammartin',
+    Street: '7 Route de Paris',
     City: 'Eugene',
     State: 'OR',
     Zipcode: '0123',
@@ -12,7 +12,7 @@ export const mockedList = [
   },
   {
     FirstName: 'Claire',
-    LastName: 'Bertrand',
+    LastName: 'Sino',
     BirthDate: '07/08/1959',
     StartDate: '01/19/2020',
     Street: 'A Great Road',
@@ -23,7 +23,7 @@ export const mockedList = [
   },
   {
     FirstName: 'Simon',
-    LastName: 'Cagneaux',
+    LastName: 'Camus',
     BirthDate: '07/18/1909',
     StartDate: '02/09/2023',
     Street: 'Rue de la paix',
@@ -34,7 +34,7 @@ export const mockedList = [
   },
   {
     FirstName: 'Katie',
-    LastName: 'Johnson',
+    LastName: 'Clark',
     BirthDate: '07/08/1969',
     StartDate: '02/21/2022',
     Street: 'Rue du Paradis',
@@ -55,8 +55,8 @@ export const mockedList = [
     Department: 'Sales',
   },
   {
-    FirstName: 'Paco',
-    LastName: 'Weiss',
+    FirstName: 'Mumu',
+    LastName: 'Weim',
     BirthDate: '02/11/1999',
     StartDate: '02/31/2019',
     Street: 'Avenue Magenta',
@@ -77,8 +77,8 @@ export const mockedList = [
     Department: 'Marketing',
   },
   {
-    FirstName: 'Shanna',
-    LastName: 'Boogards',
+    FirstName: 'Shannon',
+    LastName: 'Boogan',
     BirthDate: '12/23/1962',
     StartDate: '11/25/2001',
     Street: 'Pretty Court',
@@ -133,7 +133,7 @@ export const mockedList = [
   },
 ]
 
-export const columns = [
+export const mockedColumns = [
   'FirstName',
   'LastName',
   'BirthDate',

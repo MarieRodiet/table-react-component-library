@@ -1,7 +1,23 @@
 import React from 'react'
+import { PropTypes } from 'prop-types'
 import DataTable from './DataTable'
-import { mockedList, columns } from './data/mockedEmployeeList.js'
+export default function List({ data, columns, title, theme, sortListFunc }) {
+  return (
+    <DataTable
+      data={data}
+      columns={columns}
+      title={title}
+      theme={theme}
+      sortListFunc={sortListFunc}
+    />
+  )
+}
 
-export default function List() {
-  return <DataTable data={mockedList} columns={columns} title="Employees" />
+List.propTypes = {
+  greetee: PropTypes.string,
+  data: PropTypes.array,
+  columns: PropTypes.array,
+  title: PropTypes.string,
+  theme: PropTypes.string,
+  sortListFunc: PropTypes.func,
 }

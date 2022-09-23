@@ -2,7 +2,7 @@ import React from 'react'
 import List from './lib'
 
 const App = () => {
-  return <List greetee={'Universe'} />
+  return <List />
 }
 
 export default App

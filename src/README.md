@@ -3,7 +3,7 @@
 This is a react component table that can sort, filter and search data. It also has pagination so you can select the number of rows to display in the table and navigate to the next or previous page. It is publish on npm and will work with default props if none are provided.
 It was created using Vite, tested with react-testing-library and styled with css.
 
-![Demo of table displaying data with its default props](./src/lib/assets/table.png)
+![Demo of table displaying data with its default props](./../src/lib/assets/table.png)
 
 ## Install
 

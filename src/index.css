@@ -34,13 +34,13 @@ body {
 
 @media only screen and (min-width: 769px) {
   .listContainer {
-    max-width: 740px;
+    max-width: none;
   }
 }
 
 @media only screen and (min-width: 1023px) {
   .listContainer {
-    max-width: 1100px;
+    max-width: none;
   }
   .listContainer-link {
     font-size: 1.1em;
