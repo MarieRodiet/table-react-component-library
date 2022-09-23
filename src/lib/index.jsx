@@ -1,6 +1,7 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import DataTable from './DataTable'
+
 export default function List({ data, columns, title, theme, sortListFunc }) {
   return (
     <DataTable

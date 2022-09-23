@@ -8,13 +8,13 @@ It was created using Vite, tested with react-testing-library and styled with css
 ## Install
 
 ```bash
-npm i @mariemoore/table-react-component
+npm i table-react-component-library
 ```
 
 ## Default Usage
 
 ```bash
-import TableData from '@mariemoore/table-react-component';
+import TableData from 'table-react-component-library';
 
 export default function YourComponent(){
     return(<TableData />)

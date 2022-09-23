@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.jsx'),
-      name: 'Table',
-      fileName: (format) => `Table.${format}.js`,
+      name: 'DataTable',
+      fileName: (format) => `DataTable.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

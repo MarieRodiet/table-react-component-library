@@ -6,6 +6,7 @@ import Search from './Search.jsx'
 import Pagination from './Pagination.jsx'
 import { mockedList, mockedColumns } from './data/mockedEmployeeList.js'
 import { SortList, SearchList, ShowList } from './Sort'
+import './index.css'
 
 export default function DataTable({
   data = mockedList,
