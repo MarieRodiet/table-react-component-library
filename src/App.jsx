@@ -2,7 +2,10 @@ import React from 'react'
 import List from './lib'
 
 const App = () => {
-  return <List />
+  function showMeSelectedRows(el) {
+    console.log(el)
+  }
+  return <List title="Employees" getSelectedRows={showMeSelectedRows} />
 }
 
 export default App

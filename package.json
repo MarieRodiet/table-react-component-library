@@ -1,6 +1,6 @@
 {
   "name": "table-react-component-library",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A table that can sort, search and display data with pagination",
   "keywords": [
     "table",

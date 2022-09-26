@@ -13,20 +13,27 @@ export default function DataTable({
   columns = mockedColumns,
   title = 'TITLE',
   sortListFunc = SortList,
-  theme = 'light',
+  theme = 'dark',
+  getSelectedRows,
 }) {
   const [inputSearch, setInputSearch] = useState('')
   const [list, setList] = useState(data)
   const [isASC, setASC] = useState(true)
+  const [type, setType] = useState('string')
   const [key, setKey] = useState('')
   const [rowsPerPage, setRowsPerPage] = useState(10)
   const maxNbOfRowsPerPage = Math.round(Math.ceil(data.length / rowsPerPage))
   const [currentPage, setCurrentPage] = useState(1)
   const [nbOfPages, setNbOfPages] = useState(maxNbOfRowsPerPage)
+  const [selected, setSelected] = useState([])
 
-  const handleSort = (header) => {
+  let root = document.getElementById('root')
+  root.classList.add(theme)
+
+  const handleSort = (el) => {
     setASC(!isASC)
-    setKey(header)
+    setKey(el.field)
+    setType(el.type)
   }
 
   function handleSearch(event) {
@@ -42,11 +49,11 @@ export default function DataTable({
   }, [inputSearch, rowsPerPage, currentPage])
 
   useEffect(() => {
-    const sortedList = sortListFunc(data, key, isASC)
+    const sortedList = sortListFunc(data, key, isASC, type)
     setKey('')
     const newList = ShowList(sortedList, rowsPerPage, currentPage)
     setList(newList)
-  }, [key, isASC, rowsPerPage, currentPage])
+  }, [key, type, isASC, rowsPerPage, currentPage])
 
   function handleNbOfRows(el) {
     setRowsPerPage(parseInt(el))
@@ -67,6 +74,20 @@ export default function DataTable({
     }
   }
 
+  const updateSelectedRows = (el) => {
+    let toUpdate = []
+    if (selected.includes(el)) {
+      let newSelected = [...selected]
+      let toBeRemoved = [...selected].indexOf(el)
+      newSelected.splice(toBeRemoved, 1)
+      toUpdate = newSelected
+    } else {
+      toUpdate = [...selected, el]
+    }
+    setSelected(toUpdate)
+    getSelectedRows(toUpdate)
+  }
+
   return (
     <div className={`listContainer ${theme}`}>
       <div className="listContainer-content">
@@ -80,7 +101,14 @@ export default function DataTable({
           rowsPerPage={rowsPerPage}
           theme={theme}
         />
-        <Table data={list} columns={columns} handleSort={handleSort} theme={theme} />
+        <Table
+          data={list}
+          columns={columns}
+          handleSort={handleSort}
+          theme={theme}
+          select={updateSelectedRows}
+          selectedRows={selected}
+        />
       </div>
     </div>
   )
@@ -92,4 +120,5 @@ DataTable.propTypes = {
   title: PropTypes.string,
   sortListFunc: PropTypes.func,
   theme: PropTypes.string,
+  getSelectedRows: PropTypes.func,
 }

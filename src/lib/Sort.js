@@ -1,17 +1,17 @@
-export function SortList(list, key, order) {
-  if (key.toLowerCase().includes('date')) {
+export function SortList(list, key, order, type) {
+  if (type === 'date') {
     if (order) {
       return SortDateAZ(list, key)
     } else {
       return SortDateZA(list, key)
     }
-  } else {
+  }
+  if (type === 'string')
     if (order) {
       return SortStringAZ(list, key)
     } else {
       return SortStringZA(list, key)
     }
-  }
 }
 
 function SortStringAZ(list, key) {
