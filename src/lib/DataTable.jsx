@@ -29,9 +29,6 @@ export default function DataTable({
   const [nbOfPages, setNbOfPages] = useState(maxNbOfRowsPerPage)
   const [selected, setSelected] = useState([])
 
-  let root = document.getElementById('root')
-  root.classList.add(theme)
-
   const handleSort = (el) => {
     setASC(!isASC)
     setKey(el.field)

@@ -1,17 +1,12 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { describe, expect, test, afterEach } from 'vitest'
 import List from './index.jsx'
+import renderer from 'react-test-renderer'
 import { render, screen, cleanup } from '@testing-library/react'
 import { testList, testColumns } from './data/testData'
 
 describe('List', () => {
   afterEach(cleanup)
-  test('List component renders correctly', () => {
-    const component = renderer.create(<List />)
-    const tree = component.toJSON()
-    expect(tree).toMatchSnapshot()
-  })
 
   test('List title default prop works', () => {
     render(<List />)
@@ -26,15 +21,15 @@ describe('List', () => {
   test('List columns and data props should work', () => {
     render(<List data={testList} columns={testColumns} />)
     //COLUMNS
-    expect(screen.getByText('Prenom'))
-    expect(screen.getByText('Nom'))
-    expect(screen.getByText('DatedeNaissance'))
-    expect(screen.getByText('DatedeDebut'))
-    expect(screen.getByText('Rue'))
-    expect(screen.getByText('Ville'))
-    expect(screen.getByText('Etat'))
-    expect(screen.getByText('CodePostal'))
-    expect(screen.getByText('Departement'))
+    expect(screen.getByText('Firstname'))
+    expect(screen.getByText('Lastname'))
+    expect(screen.getByText('Birthdate'))
+    expect(screen.getByText('Start Date'))
+    expect(screen.getByText('Street'))
+    expect(screen.getByText('City'))
+    expect(screen.getByText('State'))
+    expect(screen.getByText('Zipcode'))
+    expect(screen.getByText('Department'))
 
     //FIRST DATA OBJECT
     expect(screen.getByText('ATEST'))
@@ -46,5 +41,18 @@ describe('List', () => {
     expect(screen.getByText('OP'))
     expect(screen.getByText('0000'))
     expect(screen.getByText('AAAA'))
+  })
+
+  test('It would match snapshot', () => {
+    const component = renderer.create(<List data={testList} columns={testColumns} />)
+
+    const tree = component.toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('Default theme should be light', () => {
+    render(<List data={testList} columns={testColumns} />)
+    expect(document.querySelectorAll('.light').length).toBe(4)
   })
 })
