@@ -30,14 +30,18 @@ export default function Table({ data, columns, handleSort, theme, select, select
       </thead>
       <tbody>
         {data.map((el) => {
-          let style = ''
+          let selected = false
           if (selectedRows.includes(el)) {
-            style = `table-row-${theme} selectedStyle`
-          } else style = `table-row-${theme}`
+            selected = true
+          }
           return (
-            <tr key={el.FirstName} className={style} onClick={() => select(el)}>
-              {Object.keys(el).map((key, value) => {
-                return <td key={el[key] + el[value]}>{el[key]}</td>
+            <tr key={el.FirstName} className={`table-row-${theme}`} onClick={() => select(el)}>
+              {Object.entries(el).map(([key, value]) => {
+                return (
+                  <td key={key + ' ' + value} className={selected ? 'selectedStyle' : ''}>
+                    {value}
+                  </td>
+                )
               })}
             </tr>
           )

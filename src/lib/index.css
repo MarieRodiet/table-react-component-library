@@ -209,7 +209,8 @@ TABLE
 }
 
 .selectedStyle {
-  background-color: red;
+  background-color: rgb(127, 107, 226);
+  color: white;
 }
 
 .sort-svg-light {

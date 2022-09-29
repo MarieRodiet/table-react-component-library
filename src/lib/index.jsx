@@ -2,7 +2,16 @@ import React from 'react'
 import { PropTypes } from 'prop-types'
 import DataTable from './DataTable'
 
-export default function List({ data, columns, title, theme, sortListFunc, getSelectedRows }) {
+export default function List({
+  data,
+  columns,
+  title,
+  theme,
+  sortListFunc,
+  unableSelection,
+  getSelection,
+  unableMultipleSelection,
+}) {
   return (
     <DataTable
       data={data}
@@ -10,7 +19,9 @@ export default function List({ data, columns, title, theme, sortListFunc, getSel
       title={title}
       theme={theme}
       sortListFunc={sortListFunc}
-      getSelectedRows={getSelectedRows}
+      getSelection={getSelection}
+      unableSelection={unableSelection}
+      unableMultipleSelection={unableMultipleSelection}
     />
   )
 }
@@ -22,5 +33,7 @@ List.propTypes = {
   title: PropTypes.string,
   theme: PropTypes.string,
   sortListFunc: PropTypes.func,
-  getSelectedRows: PropTypes.func,
+  getSelection: PropTypes.func,
+  unableSelection: PropTypes.bool,
+  unableMultipleSelection: PropTypes.bool,
 }

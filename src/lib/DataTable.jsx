@@ -13,8 +13,10 @@ export default function DataTable({
   columns = mockedColumns,
   title = 'TITLE',
   sortListFunc = SortList,
-  theme = 'dark',
-  getSelectedRows,
+  theme = 'light',
+  getSelection,
+  unableSelection = true,
+  unableMultipleSelection = true,
 }) {
   const [inputSearch, setInputSearch] = useState('')
   const [list, setList] = useState(data)
@@ -74,18 +76,25 @@ export default function DataTable({
     }
   }
 
-  const updateSelectedRows = (el) => {
-    let toUpdate = []
-    if (selected.includes(el)) {
-      let newSelected = [...selected]
-      let toBeRemoved = [...selected].indexOf(el)
-      newSelected.splice(toBeRemoved, 1)
-      toUpdate = newSelected
+  const updateSelection = (el) => {
+    if (unableMultipleSelection) {
+      let toUpdate = []
+      if (selected.length > 0 && selected.includes(el)) {
+        let newSelected = [...selected]
+        let toBeRemoved = [...selected].indexOf(el)
+        newSelected.splice(toBeRemoved, 1)
+        toUpdate = newSelected
+      } else {
+        toUpdate = [...selected, el]
+      }
+      setSelected(toUpdate)
+      getSelection(toUpdate)
     } else {
-      toUpdate = [...selected, el]
+      let array = new Array()
+      array.push(el)
+      setSelected(array)
+      getSelection(array)
     }
-    setSelected(toUpdate)
-    getSelectedRows(toUpdate)
   }
 
   return (
@@ -106,8 +115,8 @@ export default function DataTable({
           columns={columns}
           handleSort={handleSort}
           theme={theme}
-          select={updateSelectedRows}
-          selectedRows={selected}
+          select={unableSelection ? updateSelection : () => {}}
+          selectedRows={unableSelection ? selected : []}
         />
       </div>
     </div>
@@ -120,5 +129,7 @@ DataTable.propTypes = {
   title: PropTypes.string,
   sortListFunc: PropTypes.func,
   theme: PropTypes.string,
-  getSelectedRows: PropTypes.func,
+  getSelection: PropTypes.func,
+  unableSelection: PropTypes.bool,
+  unableMultipleSelection: PropTypes.bool,
 }
