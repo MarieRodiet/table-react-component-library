@@ -138,7 +138,7 @@ export const mockedColumns = [
     field: 'LastName',
     header: 'Lastname',
     type: 'string',
-    sortable: true,
+    sortable: false,
     width: '90',
   },
   {

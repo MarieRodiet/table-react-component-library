@@ -77,14 +77,40 @@ export function OrderData(columnFields, data) {
 }
 
 export function FindObjectInArray(object, array) {
-  let found = false
-  Object.entries(object).map(([key, value]) => {
-    found = false
-    array.map((el) => {
-      if (el[key] === value) {
-        found = true
+  let found = []
+  array.map((el) => {
+    let allMatch = []
+    Object.entries(el).map(([arrayElKey]) => {
+      if (object[arrayElKey] === el[arrayElKey]) {
+        allMatch.push(true)
+      } else {
+        allMatch.push(false)
       }
     })
+    let allMatchResult = allMatch.every((bool) => bool === true)
+    found.push(allMatchResult)
   })
-  return found
+  return found.some((bool) => bool === true)
+}
+
+export function FindObjectIndexInArray(object, array) {
+  let found = []
+  let indexFound = -1
+  array.map((el, index) => {
+    let allMatch = []
+    Object.entries(el).map(([arrayElKey]) => {
+      if (object[arrayElKey] === el[arrayElKey]) {
+        allMatch.push(true)
+      } else {
+        allMatch.push(false)
+      }
+    })
+
+    let allMatchResult = allMatch.every((bool) => bool === true)
+    if (allMatchResult) {
+      indexFound = index
+    }
+    found.push(allMatchResult)
+  })
+  return indexFound
 }

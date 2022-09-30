@@ -5,7 +5,7 @@ import Table from './Table.jsx'
 import Search from './Search.jsx'
 import Pagination from './Pagination.jsx'
 import { mockedList, mockedColumns } from './data/mockedEmployeeList.js'
-import { SortList, SearchList, ShowList, FindObjectInArray } from './Sort'
+import { SortList, SearchList, ShowList, FindObjectIndexInArray } from './Sort'
 import './index.css'
 
 export default function DataTable({
@@ -76,10 +76,11 @@ export default function DataTable({
   const updateSelection = (el) => {
     if (unableMultipleSelection) {
       let toUpdate = []
-      if (FindObjectInArray(el, selected)) {
+      console.log(selected)
+      let isFound = FindObjectIndexInArray(el, selected)
+      if (isFound !== -1) {
         let newSelected = [...selected]
-        let toBeRemoved = [...selected].indexOf(el)
-        newSelected.splice(toBeRemoved, 1)
+        newSelected.splice(isFound, 1)
         toUpdate = newSelected
       } else {
         toUpdate = [...selected, el]

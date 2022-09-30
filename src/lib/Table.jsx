@@ -1,6 +1,6 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
-import { OrderData, FindObjectInArray } from './Sort'
+import { OrderData, FindObjectIndexInArray } from './Sort'
 
 export default function Table({ data, columns, handleSort, theme, select, selectedRows }) {
   let array = columns?.map((el) => el.width)
@@ -35,7 +35,8 @@ export default function Table({ data, columns, handleSort, theme, select, select
       <tbody>
         {orderedData.map((el) => {
           let isSelected = false
-          isSelected = FindObjectInArray(el, selectedRows)
+          let index = FindObjectIndexInArray(el, selectedRows)
+          index != -1 ? (isSelected = true) : false
           return (
             <tr key={el.FirstName} className={`table-row-${theme}`} onClick={() => select(el)}>
               {Object.entries(el).map(([key, value]) => {
