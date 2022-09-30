@@ -30,7 +30,7 @@ export default function YourComponent(){
 }
 ```
 
-![Demo of selection displaying in the console](./../src/lib/assets/console.table.png)
+![Demo of selection displaying in the console](./src/lib/assets/console.table.png)
 
 ## Custom Usage
 

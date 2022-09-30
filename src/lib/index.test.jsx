@@ -59,6 +59,4 @@ describe('List', () => {
     render(<List data={testList} columns={testColumns} />)
     expect(document.querySelectorAll('.light').length).toBe(4)
   })
-
-  //test functions in Sort.js
 })
