@@ -135,19 +135,20 @@ export const mockedList = [
 
 export const mockedColumns = [
   {
-    field: 'FirstName',
-    header: 'Firstname',
-    type: 'string',
-    sortable: true,
-    width: '80',
-  },
-  {
     field: 'LastName',
     header: 'Lastname',
     type: 'string',
     sortable: true,
     width: '90',
   },
+  {
+    field: 'FirstName',
+    header: 'Firstname',
+    type: 'string',
+    sortable: true,
+    width: '80',
+  },
+
   {
     field: 'Department',
     header: 'Department',
@@ -170,19 +171,20 @@ export const mockedColumns = [
     width: '100',
   },
   {
-    field: 'State',
-    header: 'State',
-    type: 'string',
-    sortable: false,
-    width: '40',
-  },
-  {
     field: 'Zipcode',
     header: 'Zipcode',
     type: 'string',
     sortable: true,
     width: '70',
   },
+  {
+    field: 'State',
+    header: 'State',
+    type: 'string',
+    sortable: false,
+    width: '40',
+  },
+
   {
     field: 'BirthDate',
     header: 'Birthdate',

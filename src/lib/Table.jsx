@@ -1,11 +1,15 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
+import { OrderData, FindObjectInArray } from './Sort'
 
 export default function Table({ data, columns, handleSort, theme, select, selectedRows }) {
   let array = columns?.map((el) => el.width)
   let tableWidth = array.reduce((total, num) => {
     return total + Math.round(num)
   }, 0)
+
+  let columnsFields = columns.map((el) => el.field)
+  const orderedData = OrderData(columnsFields, data)
 
   return (
     <table className="table" style={{ width: `${tableWidth}px` }}>
@@ -29,16 +33,14 @@ export default function Table({ data, columns, handleSort, theme, select, select
         </tr>
       </thead>
       <tbody>
-        {data.map((el) => {
-          let selected = false
-          if (selectedRows.includes(el)) {
-            selected = true
-          }
+        {orderedData.map((el) => {
+          let isSelected = false
+          isSelected = FindObjectInArray(el, selectedRows)
           return (
             <tr key={el.FirstName} className={`table-row-${theme}`} onClick={() => select(el)}>
               {Object.entries(el).map(([key, value]) => {
                 return (
-                  <td key={key + ' ' + value} className={selected ? 'selectedStyle' : ''}>
+                  <td key={key + ' ' + value} className={isSelected ? 'selectedStyle' : ''}>
                     {value}
                   </td>
                 )

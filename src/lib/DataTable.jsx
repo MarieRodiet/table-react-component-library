@@ -5,7 +5,7 @@ import Table from './Table.jsx'
 import Search from './Search.jsx'
 import Pagination from './Pagination.jsx'
 import { mockedList, mockedColumns } from './data/mockedEmployeeList.js'
-import { SortList, SearchList, ShowList, OrderData } from './Sort'
+import { SortList, SearchList, ShowList, FindObjectInArray } from './Sort'
 import './index.css'
 
 export default function DataTable({
@@ -18,15 +18,13 @@ export default function DataTable({
   unableSelection = true,
   unableMultipleSelection = true,
 }) {
-  let columnsFields = columns.map((el) => el.field)
-  const orderedData = OrderData(columnsFields, data)
   const [inputSearch, setInputSearch] = useState('')
-  const [list, setList] = useState(orderedData)
+  const [list, setList] = useState(data)
   const [isASC, setASC] = useState(true)
   const [type, setType] = useState('string')
   const [key, setKey] = useState('')
   const [rowsPerPage, setRowsPerPage] = useState(10)
-  const maxNbOfRowsPerPage = Math.round(Math.ceil(orderedData.length / rowsPerPage))
+  const maxNbOfRowsPerPage = Math.round(Math.ceil(data.length / rowsPerPage))
   const [currentPage, setCurrentPage] = useState(1)
   const [nbOfPages, setNbOfPages] = useState(maxNbOfRowsPerPage)
   const [selected, setSelected] = useState([])
@@ -44,13 +42,13 @@ export default function DataTable({
   }
 
   useEffect(() => {
-    const searchedList = SearchList(orderedData, inputSearch)
+    const searchedList = SearchList(data, inputSearch)
     const newList = ShowList(searchedList, rowsPerPage, currentPage)
     setList(newList)
   }, [inputSearch, rowsPerPage, currentPage])
 
   useEffect(() => {
-    const sortedList = sortListFunc(orderedData, key, isASC, type)
+    const sortedList = sortListFunc(data, key, isASC, type)
     setKey('')
     const newList = ShowList(sortedList, rowsPerPage, currentPage)
     setList(newList)
@@ -58,7 +56,7 @@ export default function DataTable({
 
   function handleNbOfRows(el) {
     setRowsPerPage(parseInt(el))
-    const nb = Math.ceil(orderedData.length / el)
+    const nb = Math.ceil(data.length / el)
     setNbOfPages(nb)
     setCurrentPage(1)
   }
@@ -78,7 +76,7 @@ export default function DataTable({
   const updateSelection = (el) => {
     if (unableMultipleSelection) {
       let toUpdate = []
-      if (selected.length > 0 && selected.includes(el)) {
+      if (FindObjectInArray(el, selected)) {
         let newSelected = [...selected]
         let toBeRemoved = [...selected].indexOf(el)
         newSelected.splice(toBeRemoved, 1)

@@ -75,3 +75,16 @@ export function OrderData(columnFields, data) {
   })
   return ordered
 }
+
+export function FindObjectInArray(object, array) {
+  let found = false
+  Object.entries(object).map(([key, value]) => {
+    found = false
+    array.map((el) => {
+      if (el[key] === value) {
+        found = true
+      }
+    })
+  })
+  return found
+}
