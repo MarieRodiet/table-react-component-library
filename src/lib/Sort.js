@@ -59,3 +59,19 @@ export function ShowList(data, rowsPerPage, currentPage) {
   const newSlice = data.slice(trimStart, trimEnd)
   return newSlice
 }
+
+export function OrderData(columnFields, data) {
+  let ordered = []
+  data.map((object) => {
+    let newObject = {}
+    columnFields.map((field) => {
+      Object.entries(object).map(([key, value]) => {
+        if (field === key) {
+          newObject[key] = value
+        }
+      })
+    })
+    ordered.push(newObject)
+  })
+  return ordered
+}

@@ -21,9 +21,16 @@ npm i table-react-component-library
 import TableData from 'table-react-component-library';
 
 export default function YourComponent(){
-    return(<TableData />)
+
+    function showSelection(selectedRows){
+        console.table(selectedRows)
+    }
+
+    return(<TableData getSelection={showSelection}/>)
 }
 ```
+
+![Demo of selection displaying in the console](./../src/lib/assets/console.table.png)
 
 ## Custom Usage
 
@@ -165,7 +172,6 @@ return(
 
   1. Type: an Array of Objects that need to have the key/value pairs like in the example.
   2. Required: false
-  3. Specs: The field values need to perfectly match the object keys in the data objects. The order of objects in columns is important and need to match the order of the key/value pairs in the data objects.
 
 - **_title_**: The title in h1 to display
 
@@ -187,7 +193,7 @@ return(
 - **_getSelection_**
 
   1. Type: Function
-  2. Required: false
+  2. Required: true
   3. Specs: The function gets returned the selected row or rows so you can add the needed functionality for your app regarding them (like deleting them).
 
 - **_unableSelection_**

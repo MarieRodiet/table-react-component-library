@@ -43,11 +43,15 @@ describe('List', () => {
     expect(screen.getByText('AAAA'))
   })
 
+  test('All custom data should be rendered ', async () => {
+    const { container } = render(<List data={testList} columns={testColumns} />)
+    const tableRows = container.querySelectorAll('.table-row-light')
+    expect(tableRows.length).toBe(testList.length)
+  })
+
   test('It would match snapshot', () => {
     const component = renderer.create(<List data={testList} columns={testColumns} />)
-
     const tree = component.toJSON()
-
     expect(tree).toMatchSnapshot()
   })
 
@@ -55,4 +59,6 @@ describe('List', () => {
     render(<List data={testList} columns={testColumns} />)
     expect(document.querySelectorAll('.light').length).toBe(4)
   })
+
+  //test functions in Sort.js
 })

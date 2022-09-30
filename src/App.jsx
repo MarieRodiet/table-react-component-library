@@ -3,7 +3,7 @@ import List from './lib'
 
 const App = () => {
   function showSelection(el) {
-    console.log(el)
+    console.table(el)
   }
   return <List title="Employees" getSelection={showSelection} theme="light" />
 }

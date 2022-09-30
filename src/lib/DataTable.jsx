@@ -5,7 +5,7 @@ import Table from './Table.jsx'
 import Search from './Search.jsx'
 import Pagination from './Pagination.jsx'
 import { mockedList, mockedColumns } from './data/mockedEmployeeList.js'
-import { SortList, SearchList, ShowList } from './Sort'
+import { SortList, SearchList, ShowList, OrderData } from './Sort'
 import './index.css'
 
 export default function DataTable({
@@ -18,13 +18,15 @@ export default function DataTable({
   unableSelection = true,
   unableMultipleSelection = true,
 }) {
+  let columnsFields = columns.map((el) => el.field)
+  const orderedData = OrderData(columnsFields, data)
   const [inputSearch, setInputSearch] = useState('')
-  const [list, setList] = useState(data)
+  const [list, setList] = useState(orderedData)
   const [isASC, setASC] = useState(true)
   const [type, setType] = useState('string')
   const [key, setKey] = useState('')
   const [rowsPerPage, setRowsPerPage] = useState(10)
-  const maxNbOfRowsPerPage = Math.round(Math.ceil(data.length / rowsPerPage))
+  const maxNbOfRowsPerPage = Math.round(Math.ceil(orderedData.length / rowsPerPage))
   const [currentPage, setCurrentPage] = useState(1)
   const [nbOfPages, setNbOfPages] = useState(maxNbOfRowsPerPage)
   const [selected, setSelected] = useState([])
@@ -42,13 +44,13 @@ export default function DataTable({
   }
 
   useEffect(() => {
-    const searchedList = SearchList(data, inputSearch)
+    const searchedList = SearchList(orderedData, inputSearch)
     const newList = ShowList(searchedList, rowsPerPage, currentPage)
     setList(newList)
   }, [inputSearch, rowsPerPage, currentPage])
 
   useEffect(() => {
-    const sortedList = sortListFunc(data, key, isASC, type)
+    const sortedList = sortListFunc(orderedData, key, isASC, type)
     setKey('')
     const newList = ShowList(sortedList, rowsPerPage, currentPage)
     setList(newList)
@@ -56,7 +58,7 @@ export default function DataTable({
 
   function handleNbOfRows(el) {
     setRowsPerPage(parseInt(el))
-    const nb = Math.ceil(data.length / el)
+    const nb = Math.ceil(orderedData.length / el)
     setNbOfPages(nb)
     setCurrentPage(1)
   }
@@ -126,7 +128,7 @@ DataTable.propTypes = {
   title: PropTypes.string,
   sortListFunc: PropTypes.func,
   theme: PropTypes.string,
-  getSelection: PropTypes.func,
+  getSelection: PropTypes.func.isRequired,
   unableSelection: PropTypes.bool,
   unableMultipleSelection: PropTypes.bool,
 }
