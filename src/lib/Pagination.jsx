@@ -5,9 +5,10 @@ export default function Pagination({
   currentPage,
   handleNbOfRows,
   nbOfPages,
-  rowsPerPage,
+  //   rowsPerPage,
   theme,
 }) {
+  let options = ['10', '20', '30', '50', '100']
   return (
     <div className="table-container-pagination">
       <form className="table-container-pagination-select">
@@ -15,20 +16,22 @@ export default function Pagination({
           Rows per page :
         </label>
         <select
-          defaultValue={rowsPerPage}
+          //   defaultValue={rowsPerPage}
+          data-testid="nbOfRows-select"
           id="nbOfRows-list"
           onChange={(e) => handleNbOfRows(e.target.value)}
         >
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
+          {options.map((o) => (
+            <option data-testid="select-option" key={o}>
+              {o}
+            </option>
+          ))}
         </select>
       </form>
       {nbOfPages > 1 ? (
         <div className={`table-container-pagination-btnContainer ${theme}`}>
           <button
+            data-testid="pagination-arrow-btn"
             className="table-container-pagination-btnContainer-btn"
             onClick={() => handleCurrentPage('previous')}
           >
@@ -42,6 +45,7 @@ export default function Pagination({
           </button>
           <div className="table-container-pagination-btnContainer-currentPage">{currentPage}</div>
           <button
+            data-testid="pagination-arrow-btn"
             className="table-container-pagination-btnContainer-btn"
             onClick={() => handleCurrentPage('next')}
           >
@@ -60,6 +64,6 @@ Pagination.propTypes = {
   currentPage: PropTypes.number,
   handleNbOfRows: PropTypes.func,
   nbOfPages: PropTypes.number,
-  rowsPerPage: PropTypes.number,
+  //   rowsPerPage: PropTypes.number,
   theme: PropTypes.string,
 }

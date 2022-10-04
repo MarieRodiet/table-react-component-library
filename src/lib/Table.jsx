@@ -1,5 +1,6 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
+import Row from './Row'
 import { OrderData, FindObjectIndexInArray } from './Sort'
 
 export default function Table({ data, columns, handleSort, theme, select, selectedRows }) {
@@ -20,6 +21,8 @@ export default function Table({ data, columns, handleSort, theme, select, select
               {el.header}
               {el.sortable ? (
                 <svg
+                  key={el.type + ' ' + el.header}
+                  data-testid="sort-arrow"
                   className={`sort-svg-${theme}`}
                   onClick={() => handleSort(el)}
                   xmlns="http://www.w3.org/2000/svg"
@@ -38,15 +41,7 @@ export default function Table({ data, columns, handleSort, theme, select, select
           let index = FindObjectIndexInArray(el, selectedRows)
           index != -1 ? (isSelected = true) : false
           return (
-            <tr key={el.FirstName} className={`table-row-${theme}`} onClick={() => select(el)}>
-              {Object.entries(el).map(([key, value]) => {
-                return (
-                  <td key={key + ' ' + value} className={isSelected ? 'selectedStyle' : ''}>
-                    {value}
-                  </td>
-                )
-              })}
-            </tr>
+            <Row key={el.FirstName} el={el} isSelected={isSelected} theme={theme} select={select} />
           )
         })}
       </tbody>

@@ -17,13 +17,14 @@ export default function DataTable({
   getSelection,
   unableSelection = true,
   unableMultipleSelection = true,
+  numberOfRowsPerPage = 10,
 }) {
   const [inputSearch, setInputSearch] = useState('')
   const [list, setList] = useState(data)
   const [isASC, setASC] = useState(true)
   const [type, setType] = useState('string')
   const [key, setKey] = useState('')
-  const [rowsPerPage, setRowsPerPage] = useState(10)
+  const [rowsPerPage, setRowsPerPage] = useState(numberOfRowsPerPage)
   const maxNbOfRowsPerPage = Math.round(Math.ceil(data.length / rowsPerPage))
   const [currentPage, setCurrentPage] = useState(1)
   const [nbOfPages, setNbOfPages] = useState(maxNbOfRowsPerPage)
@@ -76,7 +77,6 @@ export default function DataTable({
   const updateSelection = (el) => {
     if (unableMultipleSelection) {
       let toUpdate = []
-      console.log(selected)
       let isFound = FindObjectIndexInArray(el, selected)
       if (isFound !== -1) {
         let newSelected = [...selected]
@@ -130,4 +130,5 @@ DataTable.propTypes = {
   getSelection: PropTypes.func.isRequired,
   unableSelection: PropTypes.bool,
   unableMultipleSelection: PropTypes.bool,
+  numberOfRowsPerPage: PropTypes.number,
 }

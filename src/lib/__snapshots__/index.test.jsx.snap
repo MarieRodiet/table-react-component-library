@@ -1,416 +1,5 @@
 // Vitest Snapshot v1
 
-exports[`List > Default theme should be light 1`] = `
-<div
-  className="listContainer light"
->
-  <div
-    className="listContainer-content"
-  >
-    <h1
-      data-testid="title"
-    >
-      TITLE
-    </h1>
-    <form
-      className="search"
-      onSubmit={[Function]}
-    >
-      <label
-        htmlFor="search"
-      >
-        Search
-      </label>
-      <input
-        className="light"
-        id="search"
-        name="search"
-      />
-      <button
-        className="light"
-      >
-        Search
-      </button>
-    </form>
-    <div
-      className="table-container-pagination"
-    >
-      <form
-        className="table-container-pagination-select"
-      >
-        <label
-          className="light"
-          htmlFor="nbOfRows"
-        >
-          Rows per page :
-        </label>
-        <select
-          defaultValue={10}
-          id="nbOfRows-list"
-          onChange={[Function]}
-        >
-          <option
-            value="10"
-          >
-            10
-          </option>
-          <option
-            value="20"
-          >
-            20
-          </option>
-          <option
-            value="30"
-          >
-            30
-          </option>
-          <option
-            value="50"
-          >
-            50
-          </option>
-          <option
-            value="100"
-          >
-            100
-          </option>
-        </select>
-      </form>
-    </div>
-    <table
-      className="table"
-      style={
-        {
-          "width": "860px",
-        }
-      }
-    >
-      <thead
-        className="table-header"
-      >
-        <tr
-          className="table-header-row-light"
-        >
-          <th
-            style={
-              {
-                "minWidth": "80px",
-              }
-            }
-          >
-            Firstname
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "90px",
-              }
-            }
-          >
-            Lastname
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "90px",
-              }
-            }
-          >
-            Birthdate
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "90px",
-              }
-            }
-          >
-            Start Date
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "200px",
-              }
-            }
-          >
-            Street
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "100px",
-              }
-            }
-          >
-            City
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "40px",
-              }
-            }
-          >
-            State
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "70px",
-              }
-            }
-          >
-            Zipcode
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-          <th
-            style={
-              {
-                "minWidth": "100px",
-              }
-            }
-          >
-            Department
-            <svg
-              className="sort-svg-light"
-              onClick={[Function]}
-              viewBox="0 0 256 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
-              />
-            </svg>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          className="table-row-light"
-          onClick={[Function]}
-        >
-          <td
-            className=""
-          >
-            ATEST
-          </td>
-          <td
-            className=""
-          >
-            ZTEST
-          </td>
-          <td
-            className=""
-          >
-            12/29/0022
-          </td>
-          <td
-            className=""
-          >
-            01/09/1992
-          </td>
-          <td
-            className=""
-          >
-            AB
-          </td>
-          <td
-            className=""
-          >
-            IJ
-          </td>
-          <td
-            className=""
-          >
-            OP
-          </td>
-          <td
-            className=""
-          >
-            0000
-          </td>
-          <td
-            className=""
-          >
-            AAAA
-          </td>
-        </tr>
-        <tr
-          className="table-row-light"
-          onClick={[Function]}
-        >
-          <td
-            className=""
-          >
-            BTEST
-          </td>
-          <td
-            className=""
-          >
-            YTEST
-          </td>
-          <td
-            className=""
-          >
-            07/08/0032
-          </td>
-          <td
-            className=""
-          >
-            01/19/2020
-          </td>
-          <td
-            className=""
-          >
-            CD
-          </td>
-          <td
-            className=""
-          >
-            KL
-          </td>
-          <td
-            className=""
-          >
-            QR
-          </td>
-          <td
-            className=""
-          >
-            1111
-          </td>
-          <td
-            className=""
-          >
-            BBBB
-          </td>
-        </tr>
-        <tr
-          className="table-row-light"
-          onClick={[Function]}
-        >
-          <td
-            className=""
-          >
-            CTEST
-          </td>
-          <td
-            className=""
-          >
-            WTEST
-          </td>
-          <td
-            className=""
-          >
-            07/18/0050
-          </td>
-          <td
-            className=""
-          >
-            02/09/2023
-          </td>
-          <td
-            className=""
-          >
-            EF
-          </td>
-          <td
-            className=""
-          >
-            MN
-          </td>
-          <td
-            className=""
-          >
-            ST
-          </td>
-          <td
-            className=""
-          >
-            2222
-          </td>
-          <td
-            className=""
-          >
-            CCCC
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
 exports[`List > It would match snapshot 1`] = `
 <div
   className="listContainer light"
@@ -428,17 +17,18 @@ exports[`List > It would match snapshot 1`] = `
       onSubmit={[Function]}
     >
       <label
-        htmlFor="search"
+        htmlFor="search-input"
       >
         Search
       </label>
       <input
         className="light"
-        id="search"
+        id="search-input"
         name="search"
       />
       <button
         className="light"
+        id="search-button"
       >
         Search
       </button>
@@ -456,37 +46,76 @@ exports[`List > It would match snapshot 1`] = `
           Rows per page :
         </label>
         <select
-          defaultValue={10}
+          data-testid="nbOfRows-select"
           id="nbOfRows-list"
           onChange={[Function]}
         >
           <option
-            value="10"
+            data-testid="select-option"
           >
             10
           </option>
           <option
-            value="20"
+            data-testid="select-option"
           >
             20
           </option>
           <option
-            value="30"
+            data-testid="select-option"
           >
             30
           </option>
           <option
-            value="50"
+            data-testid="select-option"
           >
             50
           </option>
           <option
-            value="100"
+            data-testid="select-option"
           >
             100
           </option>
         </select>
       </form>
+      <div
+        className="table-container-pagination-btnContainer light"
+      >
+        <button
+          className="table-container-pagination-btnContainer-btn"
+          data-testid="pagination-arrow-btn"
+          onClick={[Function]}
+        >
+          <svg
+            className="arrow-previous"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+            />
+          </svg>
+        </button>
+        <div
+          className="table-container-pagination-btnContainer-currentPage"
+        >
+          1
+        </div>
+        <button
+          className="table-container-pagination-btnContainer-btn"
+          data-testid="pagination-arrow-btn"
+          onClick={[Function]}
+        >
+          <svg
+            className="arrow-next"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
     <table
       className="table"
@@ -509,9 +138,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            Firstname
+            Prenom
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -528,9 +158,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            Lastname
+            Nom
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -547,9 +178,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            Birthdate
+            Date de Naissance
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -566,9 +198,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            Start Date
+            Date de Debut
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -585,9 +218,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            Street
+            Rue
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -604,9 +238,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            City
+            Ville
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -623,7 +258,18 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            State
+            Etat
+            <svg
+              className="sort-svg-light"
+              data-testid="sort-arrow"
+              onClick={[Function]}
+              viewBox="0 0 256 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M145.6 7.7C141 2.8 134.7 0 128 0s-13 2.8-17.6 7.7l-104 112c-6.5 7-8.2 17.2-4.4 25.9S14.5 160 24 160H80V352H24c-9.5 0-18.2 5.7-22 14.4s-2.1 18.9 4.4 25.9l104 112c4.5 4.9 10.9 7.7 17.6 7.7s13-2.8 17.6-7.7l104-112c6.5-7 8.2-17.2 4.4-25.9s-12.5-14.4-22-14.4H176V160h56c9.5 0 18.2-5.7 22-14.4s2.1-18.9-4.4-25.9l-104-112z"
+              />
+            </svg>
           </th>
           <th
             style={
@@ -632,9 +278,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            Zipcode
+            Code Postal
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -651,9 +298,10 @@ exports[`List > It would match snapshot 1`] = `
               }
             }
           >
-            Department
+            Departement
             <svg
               className="sort-svg-light"
+              data-testid="sort-arrow"
               onClick={[Function]}
               viewBox="0 0 256 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -672,48 +320,57 @@ exports[`List > It would match snapshot 1`] = `
         >
           <td
             className=""
+            data-testid="cell"
           >
             ATEST
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            ZTEST
+            XTEST
           </td>
           <td
             className=""
+            data-testid="cell"
           >
             12/29/0022
           </td>
           <td
             className=""
+            data-testid="cell"
           >
             01/09/1992
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            AB
+            AB Street
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            IJ
+            AB City
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            OP
+            AL
           </td>
           <td
             className=""
+            data-testid="cell"
           >
             0000
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            AAAA
+            LLLL
           </td>
         </tr>
         <tr
@@ -722,46 +379,586 @@ exports[`List > It would match snapshot 1`] = `
         >
           <td
             className=""
+            data-testid="cell"
           >
             BTEST
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            YTEST
+            WTEST
           </td>
           <td
             className=""
+            data-testid="cell"
           >
             07/08/0032
           </td>
           <td
             className=""
+            data-testid="cell"
           >
             01/19/2020
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            CD
+            CD Street
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            KL
+            CD  City
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            QR
+            AK
           </td>
           <td
             className=""
+            data-testid="cell"
           >
             1111
           </td>
           <td
             className=""
+            data-testid="cell"
+          >
+            KKKK
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            CTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            VTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            07/18/0050
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            02/09/2023
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            EF Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            EF  City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            AZ
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            2222
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            JJJJ
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            DTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            UTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            02/11/1999
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            02/31/2019
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            GH Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            GH City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            AR
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            3333
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            IIII
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            ETEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            TTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            02/13/1981
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            07/10/1998
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            IJ Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            IJ City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            CA
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            4444
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            HHHH
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            FTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            STEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            10/03/1982
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            05/29/1997
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            KL Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            KL City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            CO
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            5555
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            GGGG
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            GTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            RTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            12/23/1962
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            11/25/2001
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            MN Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            MN City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            CT
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            6666
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            FFFF
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            HTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            QTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            10/08/1948
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            08/10/1990
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            OP Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            OP City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            ID
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            7777
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            EEEE
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            ITEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            PTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            12/16/1983
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            06/01/2014
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            QR Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            QR City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            IA
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            8888
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            DDDD
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            JTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            OTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            01/11/1978
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            03/17/2000
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            ST Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            ST City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            KS
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            9999
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            CCCC
+          </td>
+        </tr>
+        <tr
+          className="table-row-light"
+          onClick={[Function]}
+        >
+          <td
+            className=""
+            data-testid="cell"
+          >
+            KTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            NTEST
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            10/14/1988
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            08/21/2009
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            UV Street
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            UV City
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            WA
+          </td>
+          <td
+            className=""
+            data-testid="cell"
+          >
+            1010
+          </td>
+          <td
+            className=""
+            data-testid="cell"
           >
             BBBB
           </td>
@@ -772,48 +969,57 @@ exports[`List > It would match snapshot 1`] = `
         >
           <td
             className=""
+            data-testid="cell"
           >
-            CTEST
+            LTEST
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            WTEST
+            MTEST
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            07/18/0050
+            07/18/1050
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            02/09/2023
+            02/09/2013
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            EF
+            WX Street
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            MN
+            WX City
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            ST
+            WI
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            2222
+            1212
           </td>
           <td
             className=""
+            data-testid="cell"
           >
-            CCCC
+            AAAA
           </td>
         </tr>
       </tbody>
