@@ -11,6 +11,7 @@ export default function List({
   unableSelection,
   getSelection,
   unableMultipleSelection,
+  showIndex,
 }) {
   return (
     <DataTable
@@ -22,6 +23,7 @@ export default function List({
       getSelection={getSelection}
       unableSelection={unableSelection}
       unableMultipleSelection={unableMultipleSelection}
+      showIndex={showIndex}
     />
   )
 }
@@ -36,4 +38,5 @@ List.propTypes = {
   getSelection: PropTypes.func,
   unableSelection: PropTypes.bool,
   unableMultipleSelection: PropTypes.bool,
+  showIndex: PropTypes.bool,
 }

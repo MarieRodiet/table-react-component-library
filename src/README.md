@@ -4,6 +4,8 @@ This is a table you can easily include in your React Project with your own data.
 
 It also has the functionality to select one or several rows and return the selection has an array. You can unable or disable that functionality.
 
+You can choose to hide the indexing on the table.
+
 It is published on npm and will work with default props if none are provided.
 It was created using Vite, tested with react-testing-library and styled with css.
 
@@ -22,10 +24,10 @@ import TableData from 'table-react-component-library';
 
 export default function YourComponent(){
 
-    function showSelection(selectedRows){
+    function getSelection(selectedRows){
         console.table(selectedRows)
     }
-    return(<TableData getSelection={showSelection}/>)
+    return(<TableData getSelection={getSelection}/>)
 }
 ```
 
@@ -127,7 +129,7 @@ export const mockedColumns = [
 ]
 
 
-const title="Your title"
+const title="Your title" or ""
 
 const theme="dark" or "light"
 
@@ -144,6 +146,8 @@ const unableSelection = true or false;
 
 const unableMultipleSelection = true or false;
 
+const showIndex = true or false;
+
 return(
     <DataTable
       data={data}
@@ -154,6 +158,7 @@ return(
       getSelection={getSelection}
       unableSelection={unableSelection}
       unableMultipleSelection={unableMultipleSelection}
+      showIndex={showIndex}
       />)
 
 
@@ -176,6 +181,7 @@ return(
 
   1. Type: String
   2. Required: false
+  3. Specs: An empty string will remove the title element completely from the component.
 
 - **_theme_**: The theme to choose from
 
@@ -206,6 +212,11 @@ return(
   1. Type: Boolean
   2. Required: false
   3. Specs: False will make only one row selected at a time
+
+- **_showIndex_**
+  1. Type: Boolean
+  2. Required: false
+  3. Specs: False will hide the indexing of the data rows
 
 ## To run this project locally
 

@@ -35,11 +35,12 @@ describe('List', () => {
     expect(screen.getByText('TEST TITLE'))
   })
 
-  test('List columns and data props should render with pagination showing only the first 10 rows', () => {
-    const { container } = render(<List data={testList} columns={testColumns} />)
+  test('List columns and data props should render with pagination showing only the first 10 rows. Some pagination arrows should help navigate to the next and previous page', () => {
+    const { container, getAllByTestId } = render(<List data={testList} columns={testColumns} />)
     const tableRows = container.querySelectorAll('.table-row-light')
+    let arrowBtns = getAllByTestId('pagination-arrow-btn')
     expect(tableRows.length).toBe(10)
-
+    expect(arrowBtns.length).toBe(2)
     //HEADERS
     expect(screen.getByText('Prenom'))
     expect(screen.getByText('Nom'))
@@ -124,5 +125,13 @@ describe('List', () => {
     fireEvent.click(sortArrows[3])
     let firstRow = getAllByTestId('cell')
     expect(firstRow[3].textContent).toBe('02/09/2023')
+  })
+
+  test('Clicking on a number header arrow should sort the columns number values', async () => {
+    const { getAllByTestId } = render(<List data={testList} columns={testColumns} />)
+    const sortArrows = await getAllByTestId('sort-arrow')
+    fireEvent.click(sortArrows[7])
+    let firstRow = getAllByTestId('cell')
+    expect(firstRow[7].textContent).toBe('9999')
   })
 })

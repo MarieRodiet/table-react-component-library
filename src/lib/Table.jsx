@@ -1,21 +1,25 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import Row from './Row'
-import { OrderData, FindObjectIndexInArray } from './Sort'
+import { OrderData, FindObjectIndexInArray } from './features.js'
 
-export default function Table({ data, columns, handleSort, theme, select, selectedRows }) {
-  let array = columns?.map((el) => el.width)
-  let tableWidth = array.reduce((total, num) => {
-    return total + Math.round(num)
-  }, 0)
-
+export default function Table({
+  data,
+  columns,
+  handleSort,
+  theme,
+  select,
+  selectedRows,
+  showIndex,
+}) {
   let columnsFields = columns.map((el) => el.field)
   const orderedData = OrderData(columnsFields, data)
 
   return (
-    <table className="table" style={{ width: `${tableWidth}px` }}>
+    <table className="table">
       <thead className="table-header">
         <tr className={`table-header-row-${theme}`}>
+          {showIndex ? <th style={{ minWidth: `20px` }}>index</th> : null}
           {columns.map((el) => (
             <th key={el.field} style={{ minWidth: `${el.width}px` }}>
               {el.header}
@@ -36,12 +40,19 @@ export default function Table({ data, columns, handleSort, theme, select, select
         </tr>
       </thead>
       <tbody>
-        {orderedData.map((el) => {
+        {orderedData.map((el, i) => {
           let isSelected = false
           let index = FindObjectIndexInArray(el, selectedRows)
           index != -1 ? (isSelected = true) : false
           return (
-            <Row key={el.FirstName} el={el} isSelected={isSelected} theme={theme} select={select} />
+            <Row
+              key={el.FirstName}
+              el={el}
+              isSelected={isSelected}
+              theme={theme}
+              select={select}
+              showIndex={showIndex ? i.toString() : ''}
+            />
           )
         })}
       </tbody>
@@ -56,4 +67,5 @@ Table.propTypes = {
   theme: PropTypes.string,
   select: PropTypes.func,
   selectedRows: PropTypes.array,
+  showIndex: PropTypes.bool,
 }

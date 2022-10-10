@@ -5,7 +5,6 @@ export default function Pagination({
   currentPage,
   handleNbOfRows,
   nbOfPages,
-  //   rowsPerPage,
   theme,
 }) {
   let options = ['10', '20', '30', '50', '100']
@@ -16,7 +15,6 @@ export default function Pagination({
           Rows per page :
         </label>
         <select
-          //   defaultValue={rowsPerPage}
           data-testid="nbOfRows-select"
           id="nbOfRows-list"
           onChange={(e) => handleNbOfRows(e.target.value)}
@@ -64,6 +62,5 @@ Pagination.propTypes = {
   currentPage: PropTypes.number,
   handleNbOfRows: PropTypes.func,
   nbOfPages: PropTypes.number,
-  //   rowsPerPage: PropTypes.number,
   theme: PropTypes.string,
 }

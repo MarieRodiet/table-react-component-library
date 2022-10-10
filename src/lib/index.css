@@ -17,11 +17,11 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 80px 7%;
+  align-items: start;
+  padding: 15px;
 }
 
-.listContainer-content h1 {
+.listContainer h1 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   font-size: 2.4em;
@@ -42,15 +42,15 @@ body {
     font-size: 1.1em;
   }
 
-  .listContainer-content h1 {
+  .listContainer h1 {
     font-size: 3em;
   }
-  .listContainer-content-search button {
+  .listContainer-search button {
     font-size: 1em;
   }
 
-  .listContainer-content-search-table td,
-  .listContainer-content-search-table th {
+  .listContainer-search-table td,
+  .listContainer-search-table th {
     font-size: 1em;
     max-width: 120px;
   }
@@ -63,10 +63,8 @@ SEARCH
 */
 .search {
   margin-bottom: 30px;
-  background-color: white;
   opacity: 85%;
   border-radius: 2px;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   width: fit-content;
@@ -148,7 +146,7 @@ pagination
   display: flex;
   justify-content: space-around;
   background-color: #f0f0f0;
-  padding: 0px 10px;
+  padding: 1px 10px;
 }
 .table-container-pagination-btnContainer-currentPage {
   font-weight: 200;
@@ -189,8 +187,9 @@ TABLE
 */
 
 .table {
-  width: 100vw;
+  width: 100%;
   position: relative;
+  cursor: pointer;
 }
 
 .table td,
@@ -199,12 +198,12 @@ TABLE
   height: 35px;
   width: 100%;
   font-size: 0.9em;
-  padding: 5px 10px;
   text-align: center;
+  justify-content: center;
 }
 .table thead svg {
   width: 7px;
-  padding-left: 4px;
+  padding-left: 6px;
   margin-bottom: -3;
 }
 
@@ -251,6 +250,5 @@ TABLE
   .table td,
   .table th {
     font-size: 1em;
-    /* max-width: 120px; */
   }
 }

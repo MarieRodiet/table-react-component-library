@@ -12,6 +12,10 @@ export function SortList(list, key, order, type) {
     } else {
       return SortStringZA(list, key)
     }
+  else {
+    console.log('type of column object is not date or string')
+    return list
+  }
 }
 
 function SortStringAZ(list, key) {

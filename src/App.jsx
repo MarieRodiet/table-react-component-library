@@ -2,15 +2,15 @@ import React from 'react'
 import List from './lib'
 
 const App = () => {
-  function showSelection(el) {
+  const getSelection = (el) => {
     console.table(el)
   }
   return (
     <List
       title="Employees"
-      getSelection={showSelection}
-      theme="light"
+      getSelection={getSelection}
       unableMultipleSelection={true}
+      theme="dark"
     />
   )
 }

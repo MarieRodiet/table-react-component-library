@@ -146,7 +146,7 @@ export const mockedColumns = [
     header: 'Firstname',
     type: 'string',
     sortable: true,
-    width: '80',
+    width: '90',
   },
 
   {
@@ -154,7 +154,7 @@ export const mockedColumns = [
     header: 'Department',
     type: 'string',
     sortable: true,
-    width: '100',
+    width: '110',
   },
   {
     field: 'Street',
@@ -175,14 +175,14 @@ export const mockedColumns = [
     header: 'Zipcode',
     type: 'string',
     sortable: true,
-    width: '70',
+    width: '80',
   },
   {
     field: 'State',
     header: 'State',
     type: 'string',
     sortable: false,
-    width: '40',
+    width: '60',
   },
 
   {
@@ -190,13 +190,13 @@ export const mockedColumns = [
     header: 'Birthdate',
     type: 'date',
     sortable: true,
-    width: '90',
+    width: '110',
   },
   {
     field: 'StartDate',
     header: 'Start Date',
     type: 'date',
     sortable: true,
-    width: '90',
+    width: '110',
   },
 ]

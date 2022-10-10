@@ -5,7 +5,7 @@ import Table from './Table.jsx'
 import Search from './Search.jsx'
 import Pagination from './Pagination.jsx'
 import { mockedList, mockedColumns } from './data/mockedEmployeeList.js'
-import { SortList, SearchList, ShowList, FindObjectIndexInArray } from './Sort'
+import { SortList, SearchList, ShowList, FindObjectIndexInArray } from './features.js'
 import './index.css'
 
 export default function DataTable({
@@ -18,6 +18,7 @@ export default function DataTable({
   unableSelection = true,
   unableMultipleSelection = true,
   numberOfRowsPerPage = 10,
+  showIndex = true,
 }) {
   const [inputSearch, setInputSearch] = useState('')
   const [list, setList] = useState(data)
@@ -97,26 +98,25 @@ export default function DataTable({
 
   return (
     <div className={`listContainer ${theme}`}>
-      <div className="listContainer-content">
-        <h1 data-testid="title">{title}</h1>
-        <Search handleSearch={handleSearch} theme={theme} />
-        <Pagination
-          handleNbOfRows={handleNbOfRows}
-          currentPage={currentPage}
-          handleCurrentPage={handleCurrentPage}
-          nbOfPages={nbOfPages}
-          rowsPerPage={rowsPerPage}
-          theme={theme}
-        />
-        <Table
-          data={list}
-          columns={columns}
-          handleSort={handleSort}
-          theme={theme}
-          select={unableSelection ? updateSelection : () => {}}
-          selectedRows={unableSelection ? selected : []}
-        />
-      </div>
+      {title !== '' ? <h1 data-testid="title">{title}</h1> : null}
+      <Search handleSearch={handleSearch} theme={theme} />
+      <Pagination
+        handleNbOfRows={handleNbOfRows}
+        currentPage={currentPage}
+        handleCurrentPage={handleCurrentPage}
+        nbOfPages={nbOfPages}
+        rowsPerPage={rowsPerPage}
+        theme={theme}
+      />
+      <Table
+        data={list}
+        columns={columns}
+        handleSort={handleSort}
+        theme={theme}
+        select={unableSelection ? updateSelection : () => {}}
+        selectedRows={unableSelection ? selected : []}
+        showIndex={showIndex}
+      />
     </div>
   )
 }
@@ -131,4 +131,5 @@ DataTable.propTypes = {
   unableSelection: PropTypes.bool,
   unableMultipleSelection: PropTypes.bool,
   numberOfRowsPerPage: PropTypes.number,
+  showIndex: PropTypes.bool,
 }

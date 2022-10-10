@@ -5,7 +5,7 @@ exports[`List > It would match snapshot 1`] = `
   className="listContainer light"
 >
   <div
-    className="listContainer-content"
+    className="listContainer"
   >
     <h1
       data-testid="title"
