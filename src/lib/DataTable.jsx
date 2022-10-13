@@ -38,6 +38,7 @@ export default function DataTable({
   }
 
   function handleSearch(event) {
+    console.log(event)
     event.preventDefault()
     let input = event.target.elements.search.value
     setInputSearch(input.toLowerCase())

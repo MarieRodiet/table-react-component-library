@@ -14,14 +14,16 @@ exports[`List > It would match snapshot 1`] = `
     onSubmit={[Function]}
   >
     <label
-      htmlFor="search-input"
+      htmlFor="search"
     >
       Search
     </label>
     <input
+      aria-label="search"
       className="light"
-      id="search-input"
+      id="search"
       name="search"
+      type="text"
     />
     <button
       className="light"
@@ -78,6 +80,7 @@ exports[`List > It would match snapshot 1`] = `
       className="table-container-pagination-btnContainer light"
     >
       <button
+        aria-label="previous button"
         className="table-container-pagination-btnContainer-btn"
         data-testid="pagination-arrow-btn"
         onClick={[Function]}
@@ -98,6 +101,7 @@ exports[`List > It would match snapshot 1`] = `
         1
       </div>
       <button
+        aria-label="next button"
         className="table-container-pagination-btnContainer-btn"
         data-testid="pagination-arrow-btn"
         onClick={[Function]}

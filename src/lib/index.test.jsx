@@ -72,7 +72,7 @@ describe('List', () => {
 
   test('Inserting the value of testList.FirstName in the search field should render the list with just one row', async () => {
     const { container } = render(<List data={testList} columns={testColumns} />)
-    const searchInput = container.querySelector('#search-input')
+    const searchInput = container.querySelector('#search')
     const searchButton = container.querySelector('#search-button')
     fireEvent.change(searchInput, { target: { value: 'ATEST' } })
     expect(searchInput.value).toBe('ATEST')

@@ -4,14 +4,8 @@ import { PropTypes } from 'prop-types'
 export default function Search({ handleSearch, theme }) {
   return (
     <form onSubmit={handleSearch} className="search">
-      <label htmlFor="search-input">Search</label>
-      <input
-        className={theme}
-        name="search-input"
-        id="search-input"
-        type="text"
-        aria-label="Search"
-      />
+      <label htmlFor="search">Search</label>
+      <input className={theme} name="search" id="search" type="text" aria-label="search" />
       <button id="search-button" className={theme}>
         Search
       </button>
