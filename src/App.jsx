@@ -5,14 +5,7 @@ const App = () => {
   const getSelection = (el) => {
     console.table(el)
   }
-  return (
-    <List
-      title="Employees"
-      getSelection={getSelection}
-      unableMultipleSelection={true}
-      theme="dark"
-    />
-  )
+  return <List title="Employees" getSelection={getSelection} unableMultipleSelection={true} />
 }
 
 export default App

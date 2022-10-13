@@ -127,7 +127,7 @@ DataTable.propTypes = {
   title: PropTypes.string,
   sortListFunc: PropTypes.func,
   theme: PropTypes.string,
-  getSelection: PropTypes.func.isRequired,
+  getSelection: PropTypes.func,
   unableSelection: PropTypes.bool,
   unableMultipleSelection: PropTypes.bool,
   numberOfRowsPerPage: PropTypes.number,

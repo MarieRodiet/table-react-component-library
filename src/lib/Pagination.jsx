@@ -29,6 +29,7 @@ export default function Pagination({
       {nbOfPages > 1 ? (
         <div className={`table-container-pagination-btnContainer ${theme}`}>
           <button
+            aria-label="previous button"
             data-testid="pagination-arrow-btn"
             className="table-container-pagination-btnContainer-btn"
             onClick={() => handleCurrentPage('previous')}
@@ -43,6 +44,7 @@ export default function Pagination({
           </button>
           <div className="table-container-pagination-btnContainer-currentPage">{currentPage}</div>
           <button
+            aria-label="next button"
             data-testid="pagination-arrow-btn"
             className="table-container-pagination-btnContainer-btn"
             onClick={() => handleCurrentPage('next')}

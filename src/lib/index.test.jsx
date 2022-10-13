@@ -92,7 +92,7 @@ describe('List', () => {
     const tableRows = container.querySelectorAll('.table-row-light')
     await userEvent.click(tableRows[0])
     const coloredCells = container.querySelectorAll('.selectedStyle')
-    expect(coloredCells.length).toBe(9)
+    expect(coloredCells.length).toBe(10)
     expect(s[0].FirstName).toBe(testList[0].FirstName)
   })
 
@@ -112,7 +112,9 @@ describe('List', () => {
   })
 
   test('Clicking on a string header arrow should sort the columns string values', async () => {
-    const { getAllByTestId } = render(<List data={testList} columns={testColumns} />)
+    const { getAllByTestId } = render(
+      <List data={testList} columns={testColumns} showIndex={false} />
+    )
     const sortArrows = await getAllByTestId('sort-arrow')
     fireEvent.click(sortArrows[0])
     let firstRow = getAllByTestId('cell')
@@ -120,7 +122,9 @@ describe('List', () => {
   })
 
   test('Clicking on a date header arrow should sort the columns date values', async () => {
-    const { getAllByTestId } = render(<List data={testList} columns={testColumns} />)
+    const { getAllByTestId } = render(
+      <List data={testList} columns={testColumns} showIndex={false} />
+    )
     const sortArrows = await getAllByTestId('sort-arrow')
     fireEvent.click(sortArrows[3])
     let firstRow = getAllByTestId('cell')
@@ -128,7 +132,9 @@ describe('List', () => {
   })
 
   test('Clicking on a number header arrow should sort the columns number values', async () => {
-    const { getAllByTestId } = render(<List data={testList} columns={testColumns} />)
+    const { getAllByTestId } = render(
+      <List data={testList} columns={testColumns} showIndex={false} />
+    )
     const sortArrows = await getAllByTestId('sort-arrow')
     fireEvent.click(sortArrows[7])
     let firstRow = getAllByTestId('cell')

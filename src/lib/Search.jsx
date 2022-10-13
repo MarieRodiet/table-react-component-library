@@ -5,7 +5,13 @@ export default function Search({ handleSearch, theme }) {
   return (
     <form onSubmit={handleSearch} className="search">
       <label htmlFor="search-input">Search</label>
-      <input className={theme} name="search" id="search-input" />
+      <input
+        className={theme}
+        name="search-input"
+        id="search-input"
+        type="text"
+        aria-label="Search"
+      />
       <button id="search-button" className={theme}>
         Search
       </button>
